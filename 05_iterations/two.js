@@ -24,7 +24,10 @@ do {
     console.log(`Score is ${score}`)
     score++
 } while (score <= 10);
-
+do {
+  console.log(`Score is ${score}`)
+  score++
+} while (score <= 10);
 for(let i=0;i<5;i++){
   console.log("hi")
 }
