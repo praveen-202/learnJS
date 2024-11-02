@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "scripts": {
+    "start": "nodemon 05_Objects3.js",
+    "pk": "nodemon 04_Objects2.js",
+    "f5": "nodemon 05_Objects3.js",
+    "arrd": "nodemon arrrayDestructuring.js"
+  }
+}

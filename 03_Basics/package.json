@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  },
+
+  "scripts": {
+    "start":"nodemon 01_function",
+    "start2":"nodemon 02_scopes",
+    "start3":"nodemon 03_arrowFunction",
+    "start4":"nodemon 03_IIFE"
+
+  }
+}

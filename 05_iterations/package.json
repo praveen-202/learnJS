@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "scripts": {
+    "start": "nodemon one",
+    "start2": "nodemon two",
+    "start3": "nodemon three"
+  }
+}
