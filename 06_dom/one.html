@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Learning</title>
+  <style>
+    .bg-black{
+      background-color: #212121;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Lorem ipsum dolor sit amet.1</h2>
+      <h2>Lorem ipsum dolor sit amet.2</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="">
+      <ul>
+        <li class = 'list-item'>one</li>
+        <li class = 'list-item'>two</li>
+        <li class = 'list-item'>three</li>
+      </ul>
+    </div>
+    <script>
+    //getElementById('idOfElement').........------------------------------------
+    // let a = document.getElementById('title').textContent = "DOM Hello Js!!!"
+
+    // ex:
+    let idd = document.getElementById('title').id
+    console.log(idd);//title
+
+    let cls = document.getElementById('title').class
+    console.log(cls);//undefined
+
+    let clss = document.getElementById('title').className
+    console.log(clss);//heading
+
+    let getAtt = document.getElementById('title').getAttribute('class')
+    console.log(getAtt);//heading
+
+    let setAtt = document.getElementById('title').setAttribute('class', 'test heading')
+    console.log(setAtt);//undefined  , but it chage the attribute
+
+    //Things can do after loading it in variable:----------
+    let title = document.getElementById('title')
+    console.log(title);
+    
+    let clr = title.style.backgroundColor = 'green'
+    console.log(clr);//green //this line's output will visible in console, it not used in code editor
+
+    title.style.padding = "15px"
+    title.style.borderRadius = "25px"
+
+    //How to add content
+    let a = title.textContent
+    console.log(a);//DOM learning on Chai aur code test text
+
+    let b = title.innerHTML
+    console.log(b)//DOM learning on Chai aur code <span style="display: none;">test text</span>
+
+    let c = title.innerText
+    console.log(c)//DOM learning on Chai aur code
+    
+    //
+    //getElementByClassName()-----------------------------------------------
+    let byClsName = document.getElementsByClassName('heading')
+    console.log(byClsName);
+
+    //3.quarySelector: it much similler to jquary
+    // let qs = document.querySelector('h2')
+    // console.log(qs);
+
+    //3.quarySelector:--------------------------- it much similler to jquary
+    // :it returns that first matching Element.
+    //:it support ('id') as css selectors .id, #class, ...etc
+    let qss = document.querySelector('#title')//to call it use css style of calling and It support all CSS selectors
+    console.log(qss);
+    
+    let qs1 = document.querySelector('.heading')
+    console.log(qs1);
+
+    let qs2 = document.querySelector('input[type="password"]')
+    console.log(qs2);
+
+    let qs3 = document.querySelector('p:first-child')
+    console.log(qs3);//---------------
+
+    let myul = document.querySelector('ul')
+    console.log(myul);
+
+    console.log(myul.querySelector('li'));
+
+    // const trunGreen = myul.querySelector('li').style.backgroundColor = 'green'
+    //or...we can do like this too...
+    const trunGreen1 = myul.querySelector('li');
+    trunGreen1.style.backgroundColor = 'blue';
+    console.log(trunGreen1);
+    
+    trunGreen1.style.padding = "10px"
+
+    console.log(trunGreen1.innerText);//one
+
+    trunGreen1.innerText = 'five'//li content changed from 'one' to 'five'
+
+    //==================================
+    // 4.quarySelector..it returns NodeList() datatype
+    const tempLiList = document.querySelectorAll('li');
+    console.log(tempLiList);//NodeList(3) [li, li, li] , NodeList is not an array, NodeList is an array-like collection of nodes, typically returned by methods like querySelectorAll() and getElementsByClassName().
+
+    //NodeList has a limited set of methods. Depending on the type (live or static), some NodeList objects may have only basic properties like length and allow iteration using a for loop or forEach() method (in modern browsers).
+    // NodeList does not inherit from Array.prototype, so methods like map(), filter(), and reduce() are not directly available on NodeList.
+    
+    // diff. b/w quarySelector, getElementById, and getElementByClassName: https://chatgpt.com/c/672e0596-3da8-8001-8b2e-cb28e4893d79
+
+    tempLiList[0].style.color = 'green';//li 1 become green in color
+    
+    //document.querySelectorAll('h1')[0].style.color = 'black'//point here is its an NodeList so you hae to give index here, without index it will not work
+      // or 
+    const myH1 = document.querySelectorAll('h1')
+    myH1[0].style.color = 'red'
+
+    // NodeList support foreach loop but it not map, filter and reduce
+
+    tempLiList.forEach((l) => l.style.backgroundColor = 'lightgreen' )
+
+    //getElementByClassName: return HTMLColletion-HTMLCollection is an array-like object that represents a collection of HTML elements.
+    //HTMLCollection has fewer methods than an Array. It does not have array methods like map(), filter(), reduce(), etc.
+    //You can access elements in an HTMLCollection using an index (e.g., collection[0]) or using a for loop.
+    //An HTMLCollection is live, meaning it automatically updates when the document changes (e.g., adding or removing elements).
+    //Both HTMLCollection and Array have a length property and can be iterated using for loops.
+
+    let tempClassList = document.getElementsByClassName('list-item')
+    console.log(tempClassList);
+
+    // tempClassList.forEach((l) => console.log(l))//Error: Uncaught TypeError: tempClassList.forEach is not a function
+
+    //Converting HTMLCollection to an Array:
+    //======================================
+
+    //1. using predefined method Array.from()
+    const myConvertedArray = Array.from(tempClassList)
+    console.log(myConvertedArray);
+    
+    myConvertedArray.forEach((li) => li.style.color = 'blue')
+
+    //2. or we can do this manually also:----
+
+// Get an HTMLCollection using getElementsByClassName
+let htmlCollection = document.getElementsByClassName('example-class');
+
+// Convert HTMLCollection to an Array using Array.from()
+let array = Array.from(htmlCollection);
+
+// 3. Or use the spread operator to convert it----------
+let arrayUsingSpread = [...htmlCollection];
+
+// Now you can use array methods like forEach(), map(), etc.
+array.forEach(element => {
+  console.log(element); // Logs each element with the class "example-class"
+});
+
+    </script>
+</body>
+</html>
+

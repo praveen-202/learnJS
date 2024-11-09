@@ -1,4 +1,4 @@
-//for of loop
+//for of loop-------------------
 
 // ["","","",""]
 // [{}, {}, {},{}]
@@ -16,7 +16,8 @@ for (const greet of greets) {
   console.log(`Each char is : ${greet}`);
 }
 
-//Maps------Hold unique keys and value can be duplicate, Holds insertion order
+//Maps------------------
+// Hold unique keys and value can be duplicate, Holds insertion order
 const map = new Map()
 map.set('IN', "India")
 map.set('USA', "United states of America")
@@ -27,7 +28,7 @@ map.set("KK", 'India')
 
 //printing a map using forof loop
 for (const key of map) {
-  console.log(key);//returns in array form 
+  console.log(key);//returns key and values in array form 
 }
 
 //using array destructuring

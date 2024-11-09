@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom | con...</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+  <ul class="language">
+    <li>JavaScript</li>
+  </ul>
+</body>
+<script>
+  //CREATING A FUNCTION FOR CREATING A LIST-ITEAM-------
+
+    function addLanguage(langName){
+      const li = document.createElement('li');
+      li.innerHTML = `${langName}`;//here the whole tree get traverse to end element, which take time and processing
+      document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('python');
+    addLanguage('typescript');
+    // addLanguage('Java');
+
+    function addOptiLanguage(langName){
+      const li = document.createElement('li');
+      li.appendChild(document.createTextNode(langName));//from here it create directly the element
+      document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('golang');
+
+  //EDIT 
+  const secondLang = document.querySelector("li:nth-child(2)");
+  const newLi = document.createElement('li');
+  newLi.textContent = "Mojo";
+  secondLang.replaceWith(newLi);
+
+  //EDIT
+  const firstLang = document.querySelector('li:first-child');
+  firstLang.outerHTML = '<li>.net</li>'
+
+  //REMOVE
+  const lastLang = document.querySelector('li:last-child');
+  lastLang.remove();
+
+</script>
+</html>

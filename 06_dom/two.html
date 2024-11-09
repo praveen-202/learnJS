@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM | Parent- child Relations</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+
+<script>
+  const parent = document.querySelector('.parent')
+  //FINDING CHILD ELEMENTS USING PARENT ELEMENT USING CLASS---------------------------
+  console.log(parent);
+  console.log(parent.children);//children is property to find the child of parent element, it returns HTMLCollection(its an array like element)
+
+  //so, we can do things like this
+  // console.log(parent.children[0]);
+  // console.log(parent.children[0].innerHTML);
+
+  for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML);
+  }//this for loop iterate the HTMLCollection 
+
+  parent.children[1].style.color = 'orange'
+  console.log(parent.firstElementChild);//The firstElementChild property returns the first child element of the specified element as an Element object. This property is useful when you need to directly access the first child that is an element node (e.g., <div>, <span>, etc.), skipping any non-element nodes such as text or comment nodes.
+  // console.log(parent.firstElementChild.innerHTML); 
+
+  console.log(parent.lastElementChild);//same as firstElementChild but it return last elemet
+
+  //FINDING PARENT ELEMENTS USING CHILD ELEMENT USING CLASS---------------------------  
+
+  const dayOne = document.querySelector('.day')
+  console.log(dayOne.innerHTML);//monday
+  console.log(dayOne.parentElement);//parentElement: it is also a proprety
+  console.log(dayOne.nextElementSibling);
+
+  console.log("NODES: ",parent.childNodes);//childNodes: The childNodes property returns a NodeList collection of a specified node's child nodes, including element nodes, text nodes, and comment nodes. It provides access to all types of nodes that are direct children of the given element or node.
+  
+  
+
+  
+    
+  
+</script>
+</body>
+</html>
