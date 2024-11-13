@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example of Event Propagation by :It was akashy saini's Explaination</title>
+  <style>
+    div{
+      min-width: 100px;
+      min-height: 100px;
+      padding: 30px;
+      border: 1px solid black ;
+    }
+  </style>
+</head>
+<body>
+  <div id="grandparent"><p>GrandParent </p>
+    <div id="parent"><p>Parent</p>
+      <div id="child"><p>Child</p></div>
+    </div>
+  </div>
+</body>
+<script>
+  //Event Bubbling - when all nested element's 2nd param. false or  is not given(bydefault false) it perform "event bubbling".
+
+  //Event Capturing(Trickling): when all nested element's 2nd params. are true, it perform "event Capturing".
+  document.querySelector('#grandparent').addEventListener('click', () => {
+    console.log("GrandParent clicked!"); 
+  },true)
+  document.querySelector('#parent').addEventListener('click', () => {
+    console.log("Parent clicked!"); 
+  },false)
+  document.querySelector('#child').addEventListener('click', () => {
+    console.log("Child clicked!"); 
+  },true)
+</script>
+</html>

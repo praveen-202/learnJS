@@ -1,94 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>html Events</title>
-  </head>
-  <body style="background-color: #414141; color: aliceblue">
-    <h2>Amazing image</h2>
-    <div>
-      <ul id="images">
-        <li>
-          <img
-            width="200px"
-            id="photoshop"
-            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt="photoshop"
-          />
-        </li>
-        <li>
-          <img
-            width="200px"
-            id="japan"
-            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            width="200px"
-            id="river"
-            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            width="200px"
-            id="owl"
-            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-          />
-        </li>
-        <!-- onclick="alert('Owl Clicked')" Don't use this approch -->
-        <li>
-          <img
-            width="200px"
-            id="prayer"
-            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-          />
-        </li>
-        <li>
-          <a style="color: aliceblue" href="https://google.com" id="google"
-            >Google</a
-          >
-        </li>
-      </ul>
-    </div>
-  </body>
-  <script>
-    //don't use this approch
-    //  document.getElementById('owl').onclick = function(){
-    //   alert("Owl clicked");
-    //  }
 
-    //attachEvent()-it was method is an older way of adding event handlers in Internet Explorer to add event to element.
-    //JQuery - on() - used in jquery to add event to element
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>html Events</title>
+</head>
 
-    // document.getElementById('owl').addEventListener('click', function(){
-    //   alert("Owl clicked");
-    // },false)//here third parameter false, if we don't take the thrid parameter it automatically take default value = false.
+<body style="background-color: #414141; color: aliceblue">
+  <h2>Amazing image</h2>
+  <div>
+    <ul id="images">
+      <li>
+        <img width="200px" id="photoshop"
+          src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="photoshop" />
+      </li>
+      <li>
+        <img width="200px" id="japan"
+          src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <img width="200px" id="river"
+          src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <img width="200px" id="owl"
+          src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <!-- onclick="alert('Owl Clicked')" Don't use this approch -->
+      <li>
+        <img width="200px" id="prayer"
+          src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <a style="color: aliceblue" href="https://google.com" id="google" target="_blank">Google</a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  //==>don't use this approch
+  //  document.getElementById('owl').onclick = function(){
+  //   alert("Owl clicked");
+  //  }
 
-    // see these method imp.-------------------
-    // type, timestamp, defaultPrevented
-    // target, toElement, srcElement, currentTarget,
-    // clientX, clientY, screenX, screenY
-    // altkey, ctrlkey, shiftkey, keyCode
+  //==These two are old ways---==
+  //==>attachEvent()-it was method is an older way of adding event handlers in Internet Explorer to add event to element.
+  //=>JQuery - on() - used in jquery to add event to element
 
-    // document.getElementById('owl').addEventListener('click', function(e){
-    //     console.log(e);
-    // });
+  //==>Use this way----
+  // document.getElementById('owl').addEventListener('click', function(){
+  //   alert("Owl clicked");
+  // },false)//here third parameter false, if we don't take the thrid parameter it automatically take default value = false.
 
-    //Event Propagation------
+  // see these method imp.-------------------
+  // type, timestamp, defaultPrevented
+  // target, toElement, srcElement, currentTarget,
+  // clientX, clientY, screenX, screenY --->these are asked in Interviews
+  // altkey, ctrlkey, shiftkey, keyCode
 
-    document.getElementById("owl").addEventListener("click", function (e) {
-      console.log(e);
-    });
-  </script>
-  <!-- <script> -->
-  <!-- // document.getElementById('owl').onclick = function(){
+  //===>Event Propagation=======
+  //the web development context that defines the order in which events are captured and handled in the DOM hierarchy. It is especially relevant in JavaScript when dealing with events such as clicks, mouseovers, etc.
+
+  //===Syntax===
+  // document.getElementById('owl').addEventListener('click', function(e){
+  //   console.log(e);
+  // }, useCapture);//here useCapture is boolean value, if we don't write this variable it automatically take "false" value which means browser understand it have to do "Event Bubbling" And if we put "true there it will perform "Event Capturing"
+
+  //So, Event Bubbling is by Defaulte, if we don't pass a true
+  //But priority of true is more, if 
+
+  //====>Event propagation occurs in mainly two phases:
+
+  //  o Event Bubbling :
+  //After the target phase, the event bubbles back up the DOM hierarchy from the target element to the root.
+
+  //  o Event Capturing (aka Event Trickling) :
+  //The event starts from the root element and propagates down to the target element. This phase allows for event handling before reaching the target element itself.
+
+  //==>Example of Event Propagation and  stoping a Event Propagation(stopPropagation()):-
+  // document.getElementById('images').addEventListener('click', function(e){
+  //     console.log("clicked inside the ul");
+  // }, false)
+
+  // document.getElementById('owl').addEventListener('click', function(e){
+  //     console.log("owl clicked");
+  //     e.stopPropagation()
+  // }, false)
+
+  // //==>preventDefault() method:The preventDefault() method is used to prevent the default action associated with an event from occurring.
+  // document.getElementById('google').addEventListener('click', (e) => {
+  //   console.log("Google clicked!!");
+  //   e.preventDefault();//it will prevent 'click' event and google will not open
+  // }, false);
+
+  //===>Problem sol. removing images and link from ul one by one
+  document.querySelector('#images').addEventListener('click', (e) => {
+    console.log(e.target.parentNode);
+    let removeIt = e.target.parentNode;//parentNode return immdiate upper parent element
+    console.log("==>",e.target.tagName);
+    if(e.target.tagName === 'IMG' || e.target.tagName === 'A'){
+      removeIt.remove(); //this is one way | remove() is new method
+    }
+    
+    // removeIt.parentNode.removeChild(removeIt);//its an old method {removeChild()}
+  }, false)
+
+</script>
+<!-- <script> -->
+<!-- // document.getElementById('owl').onclick = function(){
     //     alert("owl clicked")
     // }
 
@@ -100,20 +125,7 @@
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
-    // document.getElementById('images').addEventListener('click', function(e){
-    //     console.log("clicked inside the ul");
-    // }, false)
-
-    // document.getElementById('owl').addEventListener('click', function(e){
-    //     console.log("owl clicked");
-    //     e.stopPropagation()
-    // }, false)
     
-    // document.getElementById('google').addEventListener('click',function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation()
-    //     console.log("google clicked");
-    // }, false)
    
     
     document.querySelector('#images').addEventListener('click', function(e){
@@ -129,4 +141,5 @@
     
     //removeIt.parentNode.removeChild(removeIt)
 </script> -->
+
 </html>

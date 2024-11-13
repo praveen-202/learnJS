@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example of Event Deligation</title>
+  <style>
+    div {
+      min-width: 100px;
+      min-height: 100px;
+      padding: 30px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="grandparent">
+    <p>GrandParent </p>
+    <div id="parent">
+      <p>Parent</p>
+      <div id="child">
+        <p>Child</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+  <script>
+      //Event Deligation: By using of stopPropagation() we can stop the bulling-up or Capturing-down within that specifid element.
+      
+  //we can stop these 'Bubbling and Capturing' by calling the method stopPropagation() with parameter of callback function
+
+    document.querySelector('#grandparent').addEventListener('click', (e) => {
+      console.log("GrandParent Clicked!");   
+            e.stopPropagation();
+    }, true)
+
+    document.querySelector('#parent').addEventListener('click', (e) => {
+      console.log("Parent Clicked!");   
+      // e.stopPropagation();
+    }, true)
+
+    document.querySelector('#child').addEventListener('click', (e) => {
+      console.log("Child Clicked!");   
+      // e.stopPropagation();
+    }, true)
+
+  </script>
+ 
+
+</html>
