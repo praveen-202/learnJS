@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="background-color: rgb(134, 130, 130);">
+    <h1>Code with Praveen</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+  //setInterval():
+
+  const sayDate = function(str){
+    console.log(str, Date.now());
+  }
+
+  //Start
+  let event
+  const interval = document.querySelector('#start').addEventListener('click', (e) => {
+    event = setInterval(sayDate, 1000, "Hi");
+
+  })
+
+  //Stop
+  document.querySelector('#stop').addEventListener('click', () => {
+    clearInterval(event);
+  });
+
+
+</script>
+</html>

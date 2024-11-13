@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Functions</title>
+</head>
+<body style="background-color: rgb(134, 130, 130);">
+    <h1>Code with Pk</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+  //==>setTimeOut():
+  
+  //It is no the part of Core javascript, Its an part of WEB Api
+  //setTimeout() and setInterval() are part of the Web APIs provided by the browser's JavaScript runtime environment, such as Google Chrome's V8 engine, and are not part of the core JavaScript language itself (as defined by the ECMAScript specification).
+
+  // setTimeout(function(){
+  //   console.log("Praveen");
+  // }, 2000);
+
+  // or we can do
+
+  // const sayPk = function(){
+  //   console.log("Praveennn");
+  // }
+  // setTimeout(sayPk, 2000);
+
+  const changeH1Test = function(){
+    document.querySelector('h1').innerHTML = "Javascript is Best";
+  }
+  const changeMe = setTimeout(changeH1Test, 2000);
+
+  document.querySelector('#stop').addEventListener('click',() => {
+    clearTimeout(changeMe);
+    console.log("STOPPED");
+    
+  })
+
+  
+</script>
+</html>
