@@ -78,7 +78,7 @@ function addOne(num) {
 
 console.log("addTwo: ",addTwo(10))//error: Cannot access 'addTwo' before initialization
 
-//for function Expression is giving error
+//for function Expression is giving error  
 const addTwo = function (num1) {
   return num1+2
 }
