@@ -1,6 +1,6 @@
-const userName = "pk@gmail.com"//true
+// const userName = "pk@gmail.com"//true
 // const userName = ""//false
-// const userName = []//true
+const userName = []//true
 
 if(userName){
   console.log("Got user email");
@@ -14,7 +14,7 @@ if(userName){
 //truthy values
 // "0", 'false', " ", [], {}, function(){},
 
-//way to check array 
+//// way to check array 
 // if(userName.length === 0){
 //   console.log("Array is Empty")
 // }

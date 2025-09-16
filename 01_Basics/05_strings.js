@@ -1,11 +1,13 @@
-// let str = 'praveen'+" hello world"
+let str = 'praveen'+" hello world"
 
-// console.log(str);
+console.log(str);
 
-//  const url = "https://praveen.com/praveen%20kumar"
+ const url = "https://praveen.com/praveen%20kumar"
 
-//  console.log(url.replace('%20','-'))
-//  console.log(url.includes('sundar'));
+ console.log(url.replace('%20','-'))
+ console.log(url.includes('sundar'));
+ console.log(url.includes('kumar'));
+ 
 
 //  const str1 = "hello world python and java"
 
