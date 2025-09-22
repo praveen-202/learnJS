@@ -1,13 +1,13 @@
-let str = 'praveen'+" hello world"
+let str = 'praveen' + " hello world" + ` welcome to js`
 
 console.log(str);
 
- const url = "https://praveen.com/praveen%20kumar"
+const url = "https://praveen.com/praveen%20kumar"
 
- console.log(url.replace('%20','-'))
- console.log(url.includes('sundar'));
- console.log(url.includes('kumar'));
- 
+console.log(url.replace('%20', '-'))
+console.log(url.includes('sundar'));
+console.log(url.includes('kumar'));
+
 
 //  const str1 = "hello world python and java"
 
@@ -21,7 +21,7 @@ console.log(str);
 //  const strPrimi = String(true)
 //  console.log(strPrimi);
 //  console.log(`typeof: `,typeof strPrimi)
- 
+
 
 //  const strPrim2 = "foo"
 //  const strObj = new String(strPrim2)
@@ -29,7 +29,7 @@ console.log(str);
 
 //  console.log(typeof strPrim2)
 //  console.log(typeof strObj)
- 
+
 // //  creating String-----------------------------
 // const string1 = "A string primitive";
 // const string2 = 'Also a string primitive';
@@ -57,17 +57,17 @@ console.log(addr)//a
 console.log("Dog"[0])//D
 
 //comparing
-const a  = "a"
+const a = "a"
 const b = "b"
-console.log(a<b)//true
-console.log(a>b)//flase
+console.log(a < b)//true
+console.log(a > b)//flase
 
 let str1 = "praveen"
 let str2 = "Praveen"
 
 function areEqualCaseInsensitive(str1, str2) {
   // return str1.toUpperCase() === str2.toUpperCase();
-  return str1===str2
+  return str1 === str2
 }
 
 console.log(areEqualCaseInsensitive(str1, str2)
