@@ -1,5 +1,5 @@
 //for..in
-
+// The for...in loop iterates over the enumerable properties of an object.
 //Object Iteration
 const obj = {
   name: "Praveen",
