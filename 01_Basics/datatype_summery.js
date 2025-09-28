@@ -1,0 +1,90 @@
+//Primitives: data that is not an object and has no methods and properties
+
+// There are 7 primitive data types in JavaScript:
+// 1. Number
+// 2. BigInt
+// 3. String
+// 4. Boolean
+// 5. Undefined
+// 6. Null
+// 7. Symbol
+
+// Non-Primitives(Referance type): data that is an object and has methods and properties
+// There are 3 non-primitive data types in JavaScript:
+// 1. Object
+// 2. Array
+// 3. Date
+// 4. Function (not covered here)
+// 5. More (like Map, Set, etc - not covered here)
+// 6. More (like RegExp - not covered here)
+// 7. More (like Error - not covered here)
+// 8. More (like Promise - not covered here)
+// 9. More (like WeakMap - not covered here)
+// 10. More (like WeakSet - not covered here)
+// 11. More (like ArrayBuffer - not covered here)
+// 12. More (like DataView - not covered here)
+// 13. More (like Int8Array, Uint8Array, etc - not covered here)
+// 14. More (like SharedArrayBuffer - not covered here)
+// 15. More (like Atomics - not covered here)
+// 16. More (like WebAssembly - not covered here)
+// 17. More (like Intl - not covered here)
+// 18. More (like Reflect - not covered here)
+// 19. More (like Proxy - not covered here)
+// 20. More (like JSON - not covered here)
+// 21. More (like Math - not covered here)
+// 22. More (like Generator - not covered here)
+// 23. More (like AsyncFunction - not covered here)
+// 24. More (like AsyncGenerator - not covered here)
+// 25. More (like AsyncGeneratorFunction - not covered here)
+// 26. More (like BigInt64Array, BigUint64Array - not covered here)
+// 27. More (like FinalizationRegistry - not covered here)
+// 28. More (like WeakRef - not covered here)
+// 29. More (like AggregateError - not covered here)
+// 30. More (like WebSocket - not covered here)
+// 31. More (like URL, URLSearchParams - not covered here)
+// 32. More (like Blob, File, FileReader - not covered here)
+// 33. More (like FormData - not covered here)
+// 34. More (like Headers, Request, Response - not covered here)
+// 35. More (like ServiceWorker, ServiceWorkerRegistration - not covered here)
+// 36. More (like Cache, CacheStorage - not covered here)
+// 37. More (like Notification - not covered here)
+// 38. More (like Performance - not covered here)
+// 39. More (like Screen - not covered here)
+// 40. More (like Navigator - not covered here)
+// 41. More (like History - not covered here)
+// 42. More (like Location - not covered here)
+// 43. More (like Document, Element, Node - not covered here)
+// 44. More (like Window - not covered here)
+// 45. More (like XMLHttpRequest - not covered here)
+// 46. More (like WebGLRenderingContext - not covered here)
+// 47. More (like CanvasRenderingContext2D - not covered here)
+// 48. More (like AudioContext - not covered here)
+// 49. More (like MediaStream - not covered here)
+// 50. More (like MediaRecorder - not covered here)
+// 51. More (like SpeechSynthesis - not covered here)
+// 52. More (like Geolocation - not covered here)
+// 53. More (like DeviceOrientationEvent - not covered here)
+// 54. More (like BatteryManager - not covered here)
+// 55. More (like Vibration - not covered here)
+// 56. More (like Clipboard - not covered here)
+// 57. More (like WebRTC - not covered here)
+// 58. More (like WebAssembly - not covered here)
+// 59. More (like OffscreenCanvas - not covered here)
+// 60. More (like ImageBitmap - not covered here)
+// 61. More (like ImageData - not covered here)
+// 62. More (like TextDecoder, TextEncoder - not covered here)
+// 63. More (like CompressionStream, DecompressionStream - not covered here)
+// 64. More (like TransformStream, ReadableStream, WritableStream - not covered here)
+// 65. More (like BroadcastChannel - not covered here)
+// 66. More (like WebTransport - not covered here)
+// 67. More (like WebHID - not covered here)
+// 68. More (like WebNFC - not covered here)
+// 69. More (like WebSerial - not covered here)
+// 70. More (like WebUSB - not covered here)
+// 71. More (like PaymentRequest - not covered here)
+// 72. More (like CredentialManagement - not covered here)
+// 73. More (like AmbientLightSensor - not covered here)
+// 74. More (like Accelerometer, Gyroscope, Magnetometer - not covered here)
+// 75. More (like ProximitySensor - not covered here)
+// 76. More (like AbsoluteOrientationSensor, RelativeOrientationSensor - not covered here)
+// 77. More (like IntersectionObserver - not covered here)...
