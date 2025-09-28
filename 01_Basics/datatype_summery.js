@@ -16,6 +16,113 @@
 // 3. Date
 // 4. Function (not covered here)
 // 5. More (like Map, Set, etc - not covered here)
+
+const score1 = 33;
+// const score: number = 33; // Number - if we use typescript, variables are defined like this
+
+const outSideTemp = null; // Null
+const scoreValue = 100.9;// for float values
+const isLoggedIn = false; // Boolean
+let userEmail;
+
+const id = Symbol("123"); // Symbol
+const anotherId = Symbol("123"); // Symbol
+
+console.log(id === anotherId); // false - because each symbol is unique
+
+const bigNumber = 3456789012345678901234567890n; // BigInt
+
+// Non-Primitives(Referance type)
+const heros = ["shaktiman", "naagraj", "doga"]; // Array
+
+const myObj = {
+  name: "Ravi",
+  age: 22,
+  isLoggedIn: false
+} // Object
+
+const today = new Date(); // Date 
+console.log(today);//2025-09-25T05:08:14.389Z
+
+const myFunction = function () {
+  console.log("Hello World");
+}
+
+myFunction(); // Hello World
+
+// to find datatype of a variable
+console.log(typeof score1); // number
+console.log("outSideTemp: ", typeof outSideTemp); // object (this is a bug in javascript, null is not an object)
+console.log(typeof scoreValue); // number
+console.log(typeof bigNumber); // bigint
+console.log(typeof userEmail); // undefined
+console.log(typeof isLoggedIn); // boolean
+console.log(typeof heros); // object
+console.log(typeof myObj); // object
+console.log(typeof today); // object
+console.log("func: ", typeof myFunction); // function (function object)
+console.log(typeof id); // symbol
+console.log(typeof null); // object (this is a bug in javascript, null is not an object)   
+console.log("==========================");
+
+
+//=======================Memories in JS===================================
+// 1. Stack Memory: It stores primitive data types and references to non-primitive data types. It is faster than heap memory.
+let myName = "Ravi"; // stored in stack memory
+let anotherName = myName; // stored in stack memory - here anotherName is a copy of myName
+anotherName = "coolRavi"; // stored in stack memory - here anotherName is changed to "coolRavi", it does not affect myName because they are stored in stack memory
+
+console.log(myName); // Ravi
+console.log(anotherName); // coolRavi
+
+
+
+// 2. Heap Memory: It stores non-primitive data types. It is slower than stack memory.
+
+let userOne = {
+  name: "Ravi",
+  age: 22
+} // stored in heap memory
+
+let userTwo = userOne; // stored in stack memory - here userTwo is a reference to userOne
+userTwo.name = "Mohan"; // stored in heap memory - here userTwo is changed to "Mohan", it affects userOne because they are stored in heap memory and as we know when we try to take copy of non-primitive data types, it gives direct reference to the original object and not a copy of it.
+
+console.log(userOne); // { name: 'Mohan', age: 22 }
+console.log(userTwo); // { name: 'Mohan', age: 22 }
+//
+//     Stack                                                              Heap
+// |────────────── │                                         │ ──────────────────────────────────|
+// |┌─────────────┐│                                         │                                   |
+// |│ userTwo     │|                                         │      {                            |
+// |└─────────────┘│\                                        │         email: "user@google.com", |
+// |┌─────────────┐│ \─────────────────────────────────────► │         upi:   "user@ybl"         |
+// |│ userOne     │|                                         │      }
+// |└─────────────┘|─────────────────────────────────────►   │
+// |┌─────────────┐|                                         │
+// |│ myYoutubename│                                         │
+// |└─────────────┘|                                         │
+// |┌─────────────┐|                                         │
+// |│ anothername │|                                         │
+// |└─────────────┘|                                         │
+// |┌─────────────┐|                                         │
+// |│ myYoutubename│                                         │
+// |└─────────────┘|                                         │
+// |────────────── │
+
+
+// Note: Primitive data types are stored in stack memory and non-primitive data types are stored in heap memory. When we try to take copy of primitive data types, it gives a copy of the value and when we try to take copy of non-primitive data types, it gives direct reference to the original object and not a copy of it.
+
+
+
+
+
+
+
+
+
+
+
+
 // 6. More (like RegExp - not covered here)
 // 7. More (like Error - not covered here)
 // 8. More (like Promise - not covered here)
